@@ -2,6 +2,7 @@ import { useState } from "react";
 import API from "../api/api";
 import { useNavigate, Link } from "react-router-dom";
 import "../App.css";
+import loginIllustration from "../assets/login-illustration.png";
 
 function Login() {
   const navigate = useNavigate();
@@ -46,14 +47,9 @@ function Login() {
         {/* Left Side - Image */}
         <div className="auth-image-side">
           <img 
-            src="/src/assets/login-illustration.png" 
+            src={loginIllustration} 
             alt="3D Character with laptop" 
             className="auth-illustration"
-            onError={(e) => {
-              // Fallback if the user hasn't added the image yet
-              e.target.style.display = 'none';
-              e.target.parentElement.innerHTML += '<div style="color: #1a73e8; font-weight: 500; text-align: center;">Please add your image<br/>to src/assets/login-illustration.png</div>';
-            }}
           />
         </div>
 
